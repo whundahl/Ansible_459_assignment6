@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+
+  tasks:
+
+    - name: Stop and remove web Container
+      docker_container:
+        name: web
+        state: absent
+          
+    - name: Stop and remove mongo Container
+      docker_container:
+        name: database
+        state: absent
+
+    - name: Stop and remove Server Container 
+      docker_container: 
+        name: server 
+        state: absent

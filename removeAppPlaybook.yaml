@@ -1,0 +1,47 @@
+---
+- hosts: localhost
+
+  tasks:
+# Stopping & removing Containers---
+    - name: Stop and remove web container
+      docker_container:
+        name: web
+        state: absent
+
+    - name: Stop and remove server container
+      docker_container:
+        name: server
+        state: absent
+          
+    - name: Stop and remove mongo container
+      docker_container:
+        name: database
+        state: absent
+# Removing Images---
+    - name: Remove web image
+      docker_image:
+        name: web
+        tag: 459
+        state: absent
+
+    - name: Remove server image
+      docker_image:
+        name: server
+        tag: 459
+        state: absent
+          
+    - name: Remove mongo image
+      docker_image:
+        name: database
+        tag: 459
+        state: absent
+# Removing Database Volumes---
+    - name: Remove data container
+      docker_volume:
+        name: mongo_data
+        state: absent
+
+    - name: Remove config container
+      docker_volume:
+        name: mongo_config
+        state: absent
