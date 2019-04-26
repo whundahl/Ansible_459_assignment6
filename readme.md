@@ -4,6 +4,8 @@ This example provides basic CRUD operations using a python flask container commu
 
 There are three ADRs listed within the ADR directory which list the decisions made in this application, while providing an explanation of the application at a high level. 
 
+Please take note that the ansible script has potentially extraneous environment variable's, because the containers are linked through the use of the docker module.
+
 #### Please refer to the below section for starting and stopping of the application
 
 Of interest:
