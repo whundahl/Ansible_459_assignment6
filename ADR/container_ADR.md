@@ -12,7 +12,7 @@
 
 #### Container Contents
 
-Within the database container the image of mongo allows for the storage of the applications data, and as a result is the base layer of the application. Without this layer there would be little to no functionality in the application besides the presentation of html templates.
+Within the database container the image of mongo allows for the storage of the applications data, and as a result is the base layer of the application. Without this layer there would be little to no functionality in the application besides the presentation of html templates. The container is populated with some data but the startup for this container is lightweight and keeps the startup time for the database software short. But not short enough because we need to wait for the database to startup before continuing the script. 
 
 Inside the webclient container there is an image of flask the python web framework, that is relatively simple and lightweight. All interface with the user is handled in this layer of the application within the web-container. There is also dependencies for pyzmq which allows this layer to interface with the web server layer containing the business logic of the application. 
 
